@@ -1,8 +1,15 @@
-const { MongoClient, ObjectId} = require('mongodb');
-const url = 'mongodb://localhost:27017';
-const client = new MongoClient(url);
+const { MongoClient, ObjectId, ServerApiVersion} = require('mongodb');
+// const url = 'mongodb://localhost:27017';
+const url = "mongodb+srv://damirasainov:y6UH2PG11MUYGg0w@sktst-rental.6stklnx.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(url, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
 const dbName = 'myProject';
-  
+
 
 const getAllCategories = async () => {
     try{

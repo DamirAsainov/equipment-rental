@@ -115,7 +115,9 @@ app.post('/create-order', addTokenMiddleware, authMiddleware, async (req, res)=>
 
 const PORT = 3000;
 async function start(){
-    await mongoose.connect("mongodb://localhost:27017/myProject")
+    // await mongoose.connect("mongodb://localhost:27017/myProject")
+    await mongoose.connect("mongodb+srv://damirasainov:y6UH2PG11MUYGg0w@sktst-rental.6stklnx.mongodb.net/myProject?retryWrites=true&w=majority")
+
     app.listen(PORT, () => {
         console.log(`Server started: http://localhost:${PORT}`)
     });
